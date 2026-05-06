@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cm0v8ktju6xft" path="res://resources/texture/瓦片.png" id="1_drhme"]
 [ext_resource type="Texture2D" uid="uid://cne8g443jkapn" path="res://resources/texture/动态瓦片.png" id="2_guiot"]
+[ext_resource type="PackedScene" uid="uid://dp38ogrc2p5lu" path="res://scene/player.tscn" id="3_ppd22"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_guiot"]
 texture = ExtResource("1_drhme")
@@ -77,3 +78,6 @@ tile_set = SubResource("TileSet_ppd22")
 [node name="OverLayTileMapLayer" type="TileMapLayer" parent="." unique_id=1693917271]
 tile_map_data = PackedByteArray("AAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAPAA4AAAAAAAAAAAAPAA8AAAAAAAAAAAAPAAYAAAAAAAAAAAAPAAcAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_tytcy")
+
+[node name="Player" parent="." unique_id=1606100913 instance=ExtResource("3_ppd22")]
+position = Vector2(96, 70)
