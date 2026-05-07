@@ -1,24 +1,7 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778081070
+::res://::1778120622
 README.md::TextFile::-1::1778050810::0::1::::<><><>0<>0<><>::
 summary.md::TextFile::-1::1778073130::0::1::::<><><>0<>0<><>::
-::res://%APPDATA%/::1778072045
-::res://%APPDATA%/npm/::1778072641
-::res://%APPDATA%/npm/node_modules/::1778072049
-::res://%APPDATA%/npm/node_modules/@openai/::1778072641
-::res://%APPDATA%/npm/node_modules/@openai/codex/::1778072246
-package.json::JSON::-1::1778072246::0::1::::<><><>0<>0<><>::
-README.md::TextFile::-1::1778072246::0::1::::<><><>0<>0<><>::
-::res://%APPDATA%/npm/node_modules/@openai/codex/bin/::1778072246
-::res://%APPDATA%/npm/node_modules/@openai/codex/node_modules/::1778072246
-::res://%APPDATA%/npm/node_modules/@openai/codex/node_modules/@openai/::1778072248
-::res://%APPDATA%/npm/node_modules/@openai/codex/node_modules/@openai/codex-win32-x64/::1778072248
-package.json::JSON::-1::1778072248::0::1::::<><><>0<>0<><>::
-README.md::TextFile::-1::1778072248::0::1::::<><><>0<>0<><>::
-::res://%APPDATA%/npm/node_modules/@openai/codex/node_modules/@openai/codex-win32-x64/vendor/::1778072247
-::res://%APPDATA%/npm/node_modules/@openai/codex/node_modules/@openai/codex-win32-x64/vendor/x86_64-pc-windows-msvc/::1778072248
-::res://%APPDATA%/npm/node_modules/@openai/codex/node_modules/@openai/codex-win32-x64/vendor/x86_64-pc-windows-msvc/codex/::1778072247
-::res://%APPDATA%/npm/node_modules/@openai/codex/node_modules/@openai/codex-win32-x64/vendor/x86_64-pc-windows-msvc/path/::1778072248
 ::res://resources/::1778050810
 ::res://resources/audio/::1778050810
 1-27 Journey of the Prairie King (Overworld).mp3::AudioStreamMP3::4466031963132275093::1778050810::1778050810::1::::<><><>0<>0<>1edd5ebc64a8b37017cd125be20b1a07<>res://.godot/imported/1-27 Journey of the Prairie King (Overworld).mp3-2fb4e9c08715da6436ae3d078eb93fff.mp3str::
@@ -45,5 +28,7 @@ W.png::CompressedTexture2D::862969333638355202::1778050810::1778050810::1::::<><
 爆炸特效.png::CompressedTexture2D::1062009201987802241::1778050810::1778050810::1::::<><><>0<>0<>f5c0bf485b9cd6a86f1cdc19c9ff7bea<>res://.godot/imported/爆炸特效.png-6912e67a1f89e0aa06af8cf84d8955c1.ctex::
 瓦片.png::CompressedTexture2D::5668051477962718513::1778050810::1778050810::1::::<><><>0<>0<>76cc404a70d1c011d0b5b94ed935534c<>res://.godot/imported/瓦片.png-1785efcaad64ba609cfd7171258e89d3.ctex::
 道具ui.png::CompressedTexture2D::3099011744847287335::1778050810::1778050810::1::::<><><>0<>0<>7a31068d985b3151a74b6ff643d1d6f8<>res://.godot/imported/道具ui.png-6fb90d2989363e6350838cc6b03a30a0.ctex::
-::res://scene/::1778050810
-node_2d.tscn::PackedScene::7371857714498793420::1778050810::0::1::::<><><>0<>0<><>::uid://cm0v8ktju6xft::::res://resources/texture/瓦片.png<>uid://cne8g443jkapn::::res://resources/texture/动态瓦片.png
+::res://scene/::1778120608
+node_2d.tscn::PackedScene::7371857714498793420::1778120546::0::1::::<><><>0<>0<><>::uid://cm0v8ktju6xft::::res://resources/texture/瓦片.png<>uid://cne8g443jkapn::::res://resources/texture/动态瓦片.png<>uid://dp38ogrc2p5lu::::res://scene/player.tscn
+player.gd::GDScript::659625584225154110::1778120284::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::8271926286168777002::1778120608::0::1::::<><><>0<>0<><>::uid://jnr64f3n7e6a::::res://scene/player.gd<>uid://mka8jsp8gi3k::::res://resources/texture/W.png<>uid://b1gir0lnp3wj7::::res://resources/texture/浮游炮.png

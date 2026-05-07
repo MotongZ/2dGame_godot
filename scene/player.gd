@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 const NORMAL_ANIMATION_PREFIX := &"normal"
+
 # 角色动画节点，用于播放四方向动画。
+
 @onready var body_sprite: AnimatedSprite2D = $BodySprite
 
 
@@ -31,6 +33,7 @@ func _vector_to_facing_suffix(direction:Vector2) -> StringName:
 		return &"down" if direction.y > 0.0 else &"up"
 
 # 默认自己计数处理，与刷新率无关。
+
 func _physics_process(delta: float) -> void:
 	var move_input := Input.get_vector("move_left","move_right","move_up","move_down")
 	

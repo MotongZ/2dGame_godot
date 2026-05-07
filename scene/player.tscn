@@ -384,7 +384,7 @@ script = ExtResource("1_fvtld")
 sprite_frames = SubResource("SpriteFrames_oyaf6")
 animation = &"normal_right"
 autoplay = "normal_right"
-frame_progress = 0.39108714
+frame_progress = 0.048464682
 
 [node name="ArmedEffectSprite" type="AnimatedSprite2D" parent="." unique_id=554437404]
 visible = false
