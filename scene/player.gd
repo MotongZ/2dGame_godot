@@ -9,10 +9,9 @@ const NORMAL_ANIMATION_PREFIX := &"normal"
 
 var facing_suffix : StringName = &"right"
 
-
 @export var move_speed : float = 120.0
 
-func _r_ready() -> void:
+func _ready() -> void:
 	_update_animation()
 
 func _update_animation() -> void:

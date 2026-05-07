@@ -1,34 +1,34 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778120622
-README.md::TextFile::-1::1778050810::0::1::::<><><>0<>0<><>::
-summary.md::TextFile::-1::1778073130::0::1::::<><><>0<>0<><>::
-::res://resources/::1778050810
-::res://resources/audio/::1778050810
-1-27 Journey of the Prairie King (Overworld).mp3::AudioStreamMP3::4466031963132275093::1778050810::1778050810::1::::<><><>0<>0<>1edd5ebc64a8b37017cd125be20b1a07<>res://.godot/imported/1-27 Journey of the Prairie King (Overworld).mp3-2fb4e9c08715da6436ae3d078eb93fff.mp3str::
-1-28 Journey of the Prairie King (The Outlaw).mp3::AudioStreamMP3::3126093676160955236::1778050810::1778050810::1::::<><><>0<>0<>3c24e4bd60cae06ee8ff14b3f5d04136<>res://.godot/imported/1-28 Journey of the Prairie King (The Outlaw).mp3-4184ccdac64a7e6bef774d6671d5dcd0.mp3str::
-1-29 Journey of the Prairie King (Final Boss & Ending).mp3::AudioStreamMP3::3061523884094263577::1778050810::1778050810::1::::<><><>0<>0<>57e6b5a2eae62aa1d1e05e42adf5fe99<>res://.godot/imported/1-29 Journey of the Prairie King (Final Boss & Ending).mp3-9b252ffd3db87fd4c73a59594135d793.mp3str::
-cowboy_dead.wav::AudioStreamWAV::6794664929878989622::1778050810::1778050810::1::::<><><>0<>0<>9e5f3d41caf02a279d2aaa9c85ea1397<>res://.godot/imported/cowboy_dead.wav-a0fbc7a0b98607b985043f471013d097.sample::
-cowboy_explosion.wav::AudioStreamWAV::2456663378017440427::1778050810::1778050810::1::::<><><>0<>0<>018ebba2bd0dc60218836d5235a7602b<>res://.godot/imported/cowboy_explosion.wav-b6cda5c93879282a3ed71cd9c4201c3f.sample::
-Cowboy_Footstep.wav::AudioStreamWAV::4694804085667067335::1778050810::1778050810::1::::<><><>0<>0<>959b706212dd8919e49c20fc5078bde8<>res://.godot/imported/Cowboy_Footstep.wav-569f5f1822a037afd3ff58840a2617d1.sample::
-cowboy_gopher.wav::AudioStreamWAV::153407099542394981::1778050810::1778050810::1::::<><><>0<>0<>0e59ef9af36d0a0a60efc095d514331f<>res://.godot/imported/cowboy_gopher.wav-4b956ad077c318c0712ed74026841871.sample::
-cowboy_gunload.wav::AudioStreamWAV::9205295626806507110::1778050810::1778050810::1::::<><><>0<>0<>22abafd4ddc6b4d30cdc2f15373eeeb7<>res://.godot/imported/cowboy_gunload.wav-fe940899c29eb38d414e769fd206cf87.sample::
-Cowboy_gunshot.wav::AudioStreamWAV::8241341971024819514::1778050810::1778050810::1::::<><><>0<>0<>5c319a8948521731238f7a21043c33db<>res://.godot/imported/Cowboy_gunshot.wav-95a3ed86351b370161ad7af00fffdd0a.sample::
-cowboy_monsterdie.wav::AudioStreamWAV::1465694954147272401::1778050810::1778050810::1::::<><><>0<>0<>1cf249ee3b69fece5402ff2121c54b4b<>res://.godot/imported/cowboy_monsterdie.wav-b2ba8b0aa1ab623ded52b23fcecdbba8.sample::
-cowboy_monsterhit.wav::AudioStreamWAV::7802658219766022800::1778050810::1778050810::1::::<><><>0<>0<>e8f16baa404ec38d5cc513da7f4d5bdf<>res://.godot/imported/cowboy_monsterhit.wav-7a099c5610193b594ef27cfa7f5930a3.sample::
-cowboy_powerup.wav::AudioStreamWAV::2098397257175793672::1778050810::1778050810::1::::<><><>0<>0<>5c2b281ad3f117b9837d815581c0976e<>res://.godot/imported/cowboy_powerup.wav-9c8ed035b2251e00c108ab38dabd1d47.sample::
-Cowboy_Secret.wav::AudioStreamWAV::2502586184809662035::1778050810::1778050810::1::::<><><>0<>0<>f0c5dff9c9896be392d33f6f38ff158d<>res://.godot/imported/Cowboy_Secret.wav-99191e8b2e2d57100c72d28ee23d9ff6.sample::
-::res://resources/font/::1778050810
-IPix.ttf::FontFile::6030379091860094497::1778050810::1778050810::1::::<><><>0<>0<>ca3e6e783c03ae51e40f6e2c1d271e6b<>res://.godot/imported/IPix.ttf-f3cbb160abb9cd30831cf047255abcdd.fontdata::
-::res://resources/texture/::1778050810
-icon.png::CompressedTexture2D::8516978075577251548::1778050810::1778050810::1::::<><><>0<>0<>168f1d6eed30a8625f079be2b5155ccc<>res://.godot/imported/icon.png-7f5938041af8c9b91e3b54dc10b020f7.ctex::
-W.png::CompressedTexture2D::862969333638355202::1778050810::1778050810::1::::<><><>0<>0<>978fe792cd86774413155ff58107c114<>res://.godot/imported/W.png-7036e35ad509cea79e04954ea2ee1b88.ctex::
-动态瓦片.png::CompressedTexture2D::5695569790482679595::1778050810::1778050810::1::::<><><>0<>0<>ed6760c75dd286b40efd2b2b79089241<>res://.godot/imported/动态瓦片.png-694a79d1905eda80a5ab6e39c9362c22.ctex::
-浮游炮.png::CompressedTexture2D::4224234309933250650::1778050810::1778050810::1::::<><><>0<>0<>5e0ad9284caa591a9ec578d08e8b420f<>res://.godot/imported/浮游炮.png-a0fa8200cc1092fcee8840f7dc63bcec.ctex::
-源石虫.png::CompressedTexture2D::1751836385370419302::1778050810::1778050810::1::::<><><>0<>0<>515596713bc6444b5f2703592b2dcda4<>res://.godot/imported/源石虫.png-d890df248a90ef1fe6cf8738686581aa.ctex::
-爆炸特效.png::CompressedTexture2D::1062009201987802241::1778050810::1778050810::1::::<><><>0<>0<>f5c0bf485b9cd6a86f1cdc19c9ff7bea<>res://.godot/imported/爆炸特效.png-6912e67a1f89e0aa06af8cf84d8955c1.ctex::
-瓦片.png::CompressedTexture2D::5668051477962718513::1778050810::1778050810::1::::<><><>0<>0<>76cc404a70d1c011d0b5b94ed935534c<>res://.godot/imported/瓦片.png-1785efcaad64ba609cfd7171258e89d3.ctex::
-道具ui.png::CompressedTexture2D::3099011744847287335::1778050810::1778050810::1::::<><><>0<>0<>7a31068d985b3151a74b6ff643d1d6f8<>res://.godot/imported/道具ui.png-6fb90d2989363e6350838cc6b03a30a0.ctex::
-::res://scene/::1778120608
-node_2d.tscn::PackedScene::7371857714498793420::1778120546::0::1::::<><><>0<>0<><>::uid://cm0v8ktju6xft::::res://resources/texture/瓦片.png<>uid://cne8g443jkapn::::res://resources/texture/动态瓦片.png<>uid://dp38ogrc2p5lu::::res://scene/player.tscn
-player.gd::GDScript::659625584225154110::1778120284::0::1::::<>CharacterBody2D<><>0<>0<><>::
-player.tscn::PackedScene::8271926286168777002::1778120608::0::1::::<><><>0<>0<><>::uid://jnr64f3n7e6a::::res://scene/player.gd<>uid://mka8jsp8gi3k::::res://resources/texture/W.png<>uid://b1gir0lnp3wj7::::res://resources/texture/浮游炮.png
+::res://::1778154922
+README.md::TextFile::-1::1778038585::0::1::::<><><>0<>0<><>::
+summary.md::TextFile::-1::1778154516::0::1::::<><><>0<>0<><>::
+::res://resources/::1777993087
+::res://resources/audio/::1777993117
+1-27 Journey of the Prairie King (Overworld).mp3::AudioStreamMP3::4466031963132275093::1772557748::1777993117::1::::<><><>0<>0<>1edd5ebc64a8b37017cd125be20b1a07<>res://.godot/imported/1-27 Journey of the Prairie King (Overworld).mp3-2fb4e9c08715da6436ae3d078eb93fff.mp3str::
+1-28 Journey of the Prairie King (The Outlaw).mp3::AudioStreamMP3::3126093676160955236::1772557760::1777993117::1::::<><><>0<>0<>3c24e4bd60cae06ee8ff14b3f5d04136<>res://.godot/imported/1-28 Journey of the Prairie King (The Outlaw).mp3-4184ccdac64a7e6bef774d6671d5dcd0.mp3str::
+1-29 Journey of the Prairie King (Final Boss & Ending).mp3::AudioStreamMP3::3061523884094263577::1772557768::1777993117::1::::<><><>0<>0<>57e6b5a2eae62aa1d1e05e42adf5fe99<>res://.godot/imported/1-29 Journey of the Prairie King (Final Boss & Ending).mp3-9b252ffd3db87fd4c73a59594135d793.mp3str::
+cowboy_dead.wav::AudioStreamWAV::6794664929878989622::1576347234::1777993117::1::::<><><>0<>0<>9e5f3d41caf02a279d2aaa9c85ea1397<>res://.godot/imported/cowboy_dead.wav-a0fbc7a0b98607b985043f471013d097.sample::
+cowboy_explosion.wav::AudioStreamWAV::2456663378017440427::1576347234::1777993117::1::::<><><>0<>0<>018ebba2bd0dc60218836d5235a7602b<>res://.godot/imported/cowboy_explosion.wav-b6cda5c93879282a3ed71cd9c4201c3f.sample::
+Cowboy_Footstep.wav::AudioStreamWAV::4694804085667067335::1576347234::1777993117::1::::<><><>0<>0<>959b706212dd8919e49c20fc5078bde8<>res://.godot/imported/Cowboy_Footstep.wav-569f5f1822a037afd3ff58840a2617d1.sample::
+cowboy_gopher.wav::AudioStreamWAV::153407099542394981::1576347234::1777993117::1::::<><><>0<>0<>0e59ef9af36d0a0a60efc095d514331f<>res://.godot/imported/cowboy_gopher.wav-4b956ad077c318c0712ed74026841871.sample::
+cowboy_gunload.wav::AudioStreamWAV::9205295626806507110::1576347234::1777993117::1::::<><><>0<>0<>22abafd4ddc6b4d30cdc2f15373eeeb7<>res://.godot/imported/cowboy_gunload.wav-fe940899c29eb38d414e769fd206cf87.sample::
+Cowboy_gunshot.wav::AudioStreamWAV::8241341971024819514::1576347234::1777993117::1::::<><><>0<>0<>5c319a8948521731238f7a21043c33db<>res://.godot/imported/Cowboy_gunshot.wav-95a3ed86351b370161ad7af00fffdd0a.sample::
+cowboy_monsterdie.wav::AudioStreamWAV::1465694954147272401::1772559762::1777993117::1::::<><><>0<>0<>1cf249ee3b69fece5402ff2121c54b4b<>res://.godot/imported/cowboy_monsterdie.wav-b2ba8b0aa1ab623ded52b23fcecdbba8.sample::
+cowboy_monsterhit.wav::AudioStreamWAV::7802658219766022800::1576347234::1777993117::1::::<><><>0<>0<>e8f16baa404ec38d5cc513da7f4d5bdf<>res://.godot/imported/cowboy_monsterhit.wav-7a099c5610193b594ef27cfa7f5930a3.sample::
+cowboy_powerup.wav::AudioStreamWAV::2098397257175793672::1576347234::1777993117::1::::<><><>0<>0<>5c2b281ad3f117b9837d815581c0976e<>res://.godot/imported/cowboy_powerup.wav-9c8ed035b2251e00c108ab38dabd1d47.sample::
+Cowboy_Secret.wav::AudioStreamWAV::2502586184809662035::1576347232::1777993117::1::::<><><>0<>0<>f0c5dff9c9896be392d33f6f38ff158d<>res://.godot/imported/Cowboy_Secret.wav-99191e8b2e2d57100c72d28ee23d9ff6.sample::
+::res://resources/font/::1777993117
+IPix.ttf::FontFile::6030379091860094497::1706361038::1777993117::1::::<><><>0<>0<>ca3e6e783c03ae51e40f6e2c1d271e6b<>res://.godot/imported/IPix.ttf-f3cbb160abb9cd30831cf047255abcdd.fontdata::
+::res://resources/texture/::1777993117
+icon.png::CompressedTexture2D::8516978075577251548::1774289228::1777993117::1::::<><><>0<>0<>168f1d6eed30a8625f079be2b5155ccc<>res://.godot/imported/icon.png-7f5938041af8c9b91e3b54dc10b020f7.ctex::
+W.png::CompressedTexture2D::862969333638355202::1772613202::1777993117::1::::<><><>0<>0<>978fe792cd86774413155ff58107c114<>res://.godot/imported/W.png-7036e35ad509cea79e04954ea2ee1b88.ctex::
+动态瓦片.png::CompressedTexture2D::5695569790482679595::1772525724::1777993117::1::::<><><>0<>0<>ed6760c75dd286b40efd2b2b79089241<>res://.godot/imported/动态瓦片.png-694a79d1905eda80a5ab6e39c9362c22.ctex::
+浮游炮.png::CompressedTexture2D::4224234309933250650::1772524548::1777993117::1::::<><><>0<>0<>5e0ad9284caa591a9ec578d08e8b420f<>res://.godot/imported/浮游炮.png-a0fa8200cc1092fcee8840f7dc63bcec.ctex::
+源石虫.png::CompressedTexture2D::1751836385370419302::1772523634::1777993117::1::::<><><>0<>0<>515596713bc6444b5f2703592b2dcda4<>res://.godot/imported/源石虫.png-d890df248a90ef1fe6cf8738686581aa.ctex::
+爆炸特效.png::CompressedTexture2D::1062009201987802241::1772523804::1777993117::1::::<><><>0<>0<>f5c0bf485b9cd6a86f1cdc19c9ff7bea<>res://.godot/imported/爆炸特效.png-6912e67a1f89e0aa06af8cf84d8955c1.ctex::
+瓦片.png::CompressedTexture2D::5668051477962718513::1772524884::1777993117::1::::<><><>0<>0<>76cc404a70d1c011d0b5b94ed935534c<>res://.godot/imported/瓦片.png-1785efcaad64ba609cfd7171258e89d3.ctex::
+道具ui.png::CompressedTexture2D::3099011744847287335::1772524516::1777993117::1::::<><><>0<>0<>7a31068d985b3151a74b6ff643d1d6f8<>res://.godot/imported/道具ui.png-6fb90d2989363e6350838cc6b03a30a0.ctex::
+::res://scene/::1778154740
+node_2d.tscn::PackedScene::7371857714498793420::1778154516::0::1::::<><><>0<>0<><>::uid://cm0v8ktju6xft::::res://resources/texture/瓦片.png<>uid://cne8g443jkapn::::res://resources/texture/动态瓦片.png<>uid://dp38ogrc2p5lu::::res://scene/player.tscn
+player.gd::GDScript::659625584225154110::1778154740::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::8271926286168777002::1778154740::0::1::::<><><>0<>0<><>::uid://jnr64f3n7e6a::::res://scene/player.gd<>uid://mka8jsp8gi3k::::res://resources/texture/W.png<>uid://b1gir0lnp3wj7::::res://resources/texture/浮游炮.png

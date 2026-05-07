@@ -1,0 +1,5 @@
+res://scene/node_2d.tscn
+res://scene/player.tscn
+res://scene/bullet.gd
+res://scene/player.gd
+res://scene/bullet.tscn
