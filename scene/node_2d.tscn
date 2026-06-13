@@ -105,6 +105,9 @@ tile_set = SubResource("TileSet_tytcy")
 
 [node name="Player" parent="." unique_id=1606100913 instance=ExtResource("3_ppd22")]
 position = Vector2(96, 70)
+move_speed = 120.0
+fire_interval = 0.18
+bullet_spawn_distance = 18.0
 
 [node name="WorldBounds" type="Node2D" parent="." unique_id=808309537]
 
