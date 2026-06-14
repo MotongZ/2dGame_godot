@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PickupConfig" format=3 uid="uid://vyr5hqjtik1s"]
+
+[ext_resource type="Texture2D" uid="uid://de8wkhwe21q21" path="res://resources/atlas/pickup_speedup.tres" id="1_52uoa"]
+[ext_resource type="Script" uid="uid://cw0yd268214wx" path="res://resources/config/pickup_config.gd" id="1_nmo2k"]
+
+[resource]
+script = ExtResource("1_nmo2k")
+drop_weight = 2.0
+icon_texture = ExtResource("1_52uoa")
+move_speed_multiplier = 1.5
+metadata/_custom_type_script = "uid://cw0yd268214wx"

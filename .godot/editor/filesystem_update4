@@ -1,2 +1,15 @@
 res://scene/player.gd
 res://scene/node_2d.tscn
+res://scene/player.tscn
+res://resources/atlas/pickup_rapid.tres
+res://scene/bullet.tscn
+res://resources/atlas/pickup_spiral.tres
+res://resources/atlas/pickup_speedup.tres
+res://resources/pickup_config.gd
+res://resources/config/pickup_config.gd
+res://resources/config/pickup_rapid.tres
+res://resources/config/pickup_speed.tres
+res://resources/config/pickup_spiral.tres
+res://scene/pickup.tscn
+res://scene/blink.gdshader
+res://scene/pickup.gd

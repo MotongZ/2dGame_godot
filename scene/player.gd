@@ -2,22 +2,19 @@ extends CharacterBody2D
 # 玩家角色脚本，处理玩家的移动、动画和射击逻辑。
 # 为什么需要一个前缀？因为玩家有两套动画，一套是普通状态的动画，另一套是武装状态的动画。通过使用前缀，可以方便地根据当前状态切换不同的动画系列，而不需要为每个状态单独管理动画名称。这种方式使得代码更简洁，易于维护和扩展。
 
+class_name Player
+
 const NORMAL_ANIMATION_PREFIX := &"normal"
 # 定义一些常量，例如预加载子弹场景、动画前缀、默认射速倍率等。
 const BULLET_SCENE := preload("res://scene/bullet.tscn")
 # 同理，武装状态的前缀。
 const ARMED_ANIMATION_PREFIX := &"armed"
-# 默认射速倍率，可以通过游戏中的某些机制（如升级或道具）进行调整。
-const DEFAULT_FIRE_RATE_MULTIPLIER := 1.0
-# 武装状态下的射速倍率
-const SPIRAL_PHASE_STEP := PI/12
 
-# 定义常量用于区分玩家的模式
-const PLAYER_FROM_MODE_NORMAL := 0
-const PLAYER_FROM_MODE_ARMED := 1
-# 定义常量用于区分设计模式
-const SHOT_PATTERN_NORMAL := 0
-const SHOT_PATTERN_SPIRAL := 1
+const DEFAULT_FIRE_RATE_MULTIPLIER := 1.0	
+const DEFAULT_MOVE_SPEED_MULTIPLIER := 1.0
+const SPIRAL_PHASE_STEP := PI / 12.0
+
+
 '''
 上面的区分玩家模式和设计模式可否使用枚举完成？使用枚举可以使代码更清晰，增加可读性，并且减少使用魔法数字的风险。以下是如何使用枚举来替代常量：
 定义枚举用于区分玩家的模式
@@ -49,17 +46,17 @@ enum ShotPattern {
 # 在Godot中，&符号用于创建一个StringName类型的常量，这种类型在Godot内部被优化用于快速比较和查找字符串。使用StringName可以提高性能，特别是在需要频繁比较字符串的情况下，例如动画名称。相比于普通的字符串，StringName在内存中只存储一次，并且通过引用来使用，这样可以减少内存占用和提高效率。因此，在定义动画名称等需要频繁使用的字符串时，使用&符号创建StringName是一个好的实践。
 var facing_suffix : StringName = &"right"
 
-# rapid_fire_rate_multiplier变量用于调整射击速率的倍率，默认值为DEFAULT_FIRE_RATE_MULTIPLIER。
+# 定义玩家当前的状态
+var current_move_speed_multiplier : float = DEFAULT_MOVE_SPEED_MULTIPLIER
 var rapid_fire_rate_multiplier : float = DEFAULT_FIRE_RATE_MULTIPLIER
-
-# from_fire_rate_multiplier变量用于调整射击速率的倍率，默认值为DEFAULT_FIRE_RATE_MULTIPLIER。
-var from_fire_rate_multiplier : float = DEFAULT_FIRE_RATE_MULTIPLIER
-
-var current_form_mode : int = PLAYER_FROM_MODE_NORMAL
-
-var current_shot_pattern : int = SHOT_PATTERN_NORMAL
-
-# spiral_phase变量用于控制螺旋射击模式下子弹的发射角度，初始值为0.0。
+var form_fire_rate_multiplier : float = DEFAULT_FIRE_RATE_MULTIPLIER
+var current_form_mode : int = PickupConfig.PlayerFormMode.NORMAL
+var current_shot_pattern : int = PickupConfig.ShotPattern.NORMAL
+# 三种buff的增益时间
+var speed_buff_time_left : float = 0.0
+var rapid_buff_time_left : float = 0.0
+var form_buff_time_left : float = 0.0
+# 定义螺旋弹幕的相位
 var spiral_phase : float = 0.0
 
 @export var move_speed : float = 120.0
@@ -71,10 +68,10 @@ var spiral_phase : float = 0.0
 
 func _ready() -> void:
 	# 测试强化模式
-	current_form_mode = PLAYER_FROM_MODE_ARMED
-	current_shot_pattern = SHOT_PATTERN_SPIRAL
-	from_fire_rate_multiplier = 20.0
-	spiral_phase = 0.0
+	# current_form_mode = PLAYER_FROM_MODE_ARMED
+	# current_shot_pattern = SHOT_PATTERN_SPIRAL
+	# from_fire_rate_multiplier = 20.0
+	# spiral_phase = 0.0
 
 	shooting_timer.one_shot = true
 	shooting_timer.wait_time = _get_effective_fire_interval()
@@ -102,14 +99,16 @@ func _vector_to_facing_suffix(direction:Vector2) -> StringName:
  
 # 默认自己计数处理，与刷新率无关。
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+
+	_update_pickup_effects(_delta)
 	var move_input := Input.get_vector("move_left","move_right","move_up","move_down")
 	var shoot_input := Input.get_vector("shoot_left","shoot_right","shoot_up","shoot_down")
 	
-	velocity = move_input * move_speed
+	velocity = move_input * _get_effective_move_speed_multiplier()
 	move_and_slide()
 	
-	if current_shot_pattern == SHOT_PATTERN_SPIRAL:
+	if current_shot_pattern == PickupConfig.ShotPattern.SPIRAL:
 		_try_auto_sprial_shoot()
 	elif shoot_input != Vector2.ZERO:
 		_try_shoot(shoot_input)
@@ -120,7 +119,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _update_facing(move_input:Vector2, shoot_input:Vector2) -> void:
-	if current_shot_pattern == SHOT_PATTERN_SPIRAL:
+	if current_shot_pattern == PickupConfig.ShotPattern.SPIRAL:
 		if move_input != Vector2.ZERO:
 			facing_suffix = _vector_to_facing_suffix(move_input)
 		return
@@ -139,8 +138,53 @@ func _try_shoot(shoot_input: Vector2) -> void:
 	if has_spawn_bullet:
 		shooting_timer.start(_get_effective_fire_interval())
 
+# 应用拾取道具后的效果
+func apply_pickup(config:PickupConfig) -> bool:
+	if config == null:
+		return false
+	
+	var applied := false
+	var should_refresh_shooting_timer := false
+	var buff_duration := maxf(config.duration, 0.0)
+	var has_form_override := (
+		config.player_form_mode != PickupConfig.PlayerFormMode.NORMAL
+		or 
+		config.shot_pattern != PickupConfig.ShotPattern.NORMAL
+	)
+	var has_fire_rate_override := not is_equal_approx(
+		config.fire_rate_multiplier, 
+		DEFAULT_FIRE_RATE_MULTIPLIER
+	)
+
+	if not is_equal_approx(config.move_speed_multiplier, DEFAULT_MOVE_SPEED_MULTIPLIER):
+		current_move_speed_multiplier = config.move_speed_multiplier
+		speed_buff_time_left = buff_duration
+		applied = true
+
+	if has_fire_rate_override and not has_form_override:
+		rapid_fire_rate_multiplier = config.fire_rate_multiplier
+		rapid_buff_time_left = buff_duration
+		applied = true
+		should_refresh_shooting_timer = true
+
+	if has_form_override:
+		current_form_mode = config.player_form_mode
+		current_shot_pattern = config.shot_pattern
+		form_fire_rate_multiplier = (
+			config.fire_rate_multiplier if has_fire_rate_override else DEFAULT_FIRE_RATE_MULTIPLIER
+		)
+		form_buff_time_left = buff_duration
+		spiral_phase = 0.0
+		should_refresh_shooting_timer = true
+		applied = true
+
+	if should_refresh_shooting_timer:
+		_refresh_shooting_timer_wait_time()
+	
+	return applied
+
 func _fire_bullets(base_direction: Vector2) -> bool:
-	if current_shot_pattern == SHOT_PATTERN_SPIRAL:
+	if current_shot_pattern == PickupConfig.ShotPattern.SPIRAL:
 		var has_spawn_forward_bullet := _spwan_bullet(base_direction)
 		var has_spawn_backward_bullet := _spwan_bullet(base_direction.rotated(PI))
 		spiral_phase = wrapf(spiral_phase + SPIRAL_PHASE_STEP,0.0, TAU)
@@ -177,19 +221,19 @@ func _get_effective_fire_interval() -> float:
 
 func _get_effective_fire_rate_multiplier() -> float:
 	if _has_activate_form_override():
-		return maxf(from_fire_rate_multiplier,0.01)
+		return maxf(form_fire_rate_multiplier,0.01)
 
-	return maxf(from_fire_rate_multiplier,0.02)
+	return maxf(form_fire_rate_multiplier,0.02)
 
 func _has_activate_form_override() -> bool:
 	return (
-		current_form_mode != PLAYER_FROM_MODE_NORMAL
+		current_form_mode != PickupConfig.PlayerFormMode.NORMAL
 		or 
-		current_shot_pattern != SHOT_PATTERN_NORMAL
+		current_shot_pattern != PickupConfig.ShotPattern.NORMAL
 	)
 
 func _update_armed_effect() -> void:
-	var is_armed := current_form_mode == PLAYER_FROM_MODE_ARMED
+	var is_armed := current_form_mode == PickupConfig.PlayerFormMode.ARMED
 	if not is_armed:
 		if armed_effect_sprite.visible:
 			armed_effect_sprite.visible = false
@@ -210,7 +254,43 @@ func _update_armed_effect() -> void:
 		push_warning("Missing Player Armed Effect animation : %s" % "armed_effect")
 
 func _get_animation_prefix() -> StringName:
-	if current_form_mode == PLAYER_FROM_MODE_ARMED:
+	if current_form_mode == PickupConfig.PlayerFormMode.ARMED:
 		return ARMED_ANIMATION_PREFIX
 	return NORMAL_ANIMATION_PREFIX
 
+func _update_pickup_effects(_delta: float) -> void:
+	if speed_buff_time_left > 0.0:
+		speed_buff_time_left = maxf(speed_buff_time_left - _delta, 0.0)
+		if speed_buff_time_left == 0.0:
+			current_move_speed_multiplier = DEFAULT_MOVE_SPEED_MULTIPLIER
+	
+	if rapid_buff_time_left > 0.0:
+		rapid_buff_time_left = maxf(rapid_buff_time_left - _delta, 0.0)
+		if rapid_buff_time_left == 0.0:
+			rapid_fire_rate_multiplier = DEFAULT_FIRE_RATE_MULTIPLIER
+			if not _has_activate_form_override():
+				_refresh_shooting_timer_wait_time()
+	
+	if form_buff_time_left > 0.0:
+		form_buff_time_left = maxf(form_buff_time_left - _delta, 0.0)
+		if form_buff_time_left == 0.0:
+			current_form_mode = PickupConfig.PlayerFormMode.NORMAL
+			current_shot_pattern = PickupConfig.ShotPattern.NORMAL
+			form_fire_rate_multiplier = DEFAULT_FIRE_RATE_MULTIPLIER
+			spiral_phase = 0.0
+			_refresh_shooting_timer_wait_time()
+
+
+func _get_effective_move_speed_multiplier() -> float:
+	return move_speed * current_move_speed_multiplier
+
+func _refresh_shooting_timer_wait_time() -> void:
+	var new_interval := _get_effective_fire_interval()
+	shooting_timer.wait_time = new_interval
+
+	if shooting_timer.is_stopped():
+		return
+	if shooting_timer.time_left <= new_interval:
+		return
+	
+	shooting_timer.start(new_interval)
