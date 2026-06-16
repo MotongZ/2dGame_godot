@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyConfig" format=3 uid="uid://bdnbfle3qk0bi"]
+
+[ext_resource type="SpriteFrames" uid="uid://8tyxbcqeb1mt" path="res://resources/animation/enemy_shelled.tres" id="1_7hcef"]
+[ext_resource type="Script" uid="uid://cw0yd268214wx" path="res://resources/config/pickup_config.gd" id="1_ax6jx"]
+[ext_resource type="Resource" uid="uid://n0jt04h02cjo" path="res://resources/config/pickup_rapid.tres" id="3_7rafb"]
+[ext_resource type="Resource" uid="uid://dayl5wvkh8b60" path="res://resources/config/pickup_spiral.tres" id="4_jot1f"]
+[ext_resource type="Script" uid="uid://bc6w4m7q85hxb" path="res://resources/config/enemy_config.gd" id="5_jilfn"]
+
+[resource]
+script = ExtResource("5_jilfn")
+enemy_type = 2
+display_name = "重甲敌人"
+max_health = 6
+move_speed = 30.0
+enemy_frames = ExtResource("1_7hcef")
+pickup_drop_chance = 0.5
+pickup_drop_configs = Array[ExtResource("1_ax6jx")]([ExtResource("3_7rafb"), ExtResource("4_jot1f")])
+metadata/_custom_type_script = "uid://bc6w4m7q85hxb"

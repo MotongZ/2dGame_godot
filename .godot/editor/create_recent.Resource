@@ -1,3 +1,5 @@
+EnemyConfig
+SpriteFrames
 Shader
 PickupConfig
 AtlasTexture
